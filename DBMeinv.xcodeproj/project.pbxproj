@@ -54,6 +54,11 @@
 		0406F74B1FC41BD200F657F3 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F7141FC41BD200F657F3 /* TransformType.swift */; };
 		0406F74C1FC41BD200F657F3 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F7151FC41BD200F657F3 /* URLTransform.swift */; };
 		0406F74D1FC41BD200F657F3 /* MNBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F7171FC41BD200F657F3 /* MNBaseController.swift */; };
+		043566D01FC468AD00C0DE73 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043566C91FC468AD00C0DE73 /* CSS.swift */; };
+		043566D11FC468AD00C0DE73 /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043566CA1FC468AD00C0DE73 /* libxmlParserOption.swift */; };
+		043566D21FC468AD00C0DE73 /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043566CB1FC468AD00C0DE73 /* libxmlHTMLNode.swift */; };
+		043566D31FC468AD00C0DE73 /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043566CD1FC468AD00C0DE73 /* libxmlHTMLDocument.swift */; };
+		043566D41FC468AD00C0DE73 /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043566CE1FC468AD00C0DE73 /* Kanna.swift */; };
 		04ECBEFA1FC41C61009DD961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECBEF91FC41C61009DD961 /* Main.storyboard */; };
 		04ECBEFC1FC41C66009DD961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECBEFB1FC41C66009DD961 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -110,6 +115,15 @@
 		0406F7141FC41BD200F657F3 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
 		0406F7151FC41BD200F657F3 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
 		0406F7171FC41BD200F657F3 /* MNBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBaseController.swift; sourceTree = "<group>"; };
+		043566BE1FC4666D00C0DE73 /* DBMeinv-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DBMeinv-Bridging-Header.h"; sourceTree = "<group>"; };
+		043566C71FC466DC00C0DE73 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		043566C91FC468AD00C0DE73 /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
+		043566CA1FC468AD00C0DE73 /* libxmlParserOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlParserOption.swift; sourceTree = "<group>"; };
+		043566CB1FC468AD00C0DE73 /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlHTMLNode.swift; sourceTree = "<group>"; };
+		043566CD1FC468AD00C0DE73 /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libxmlHTMLDocument.swift; sourceTree = "<group>"; };
+		043566CE1FC468AD00C0DE73 /* Kanna.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kanna.swift; sourceTree = "<group>"; };
+		043566D71FC4742000C0DE73 /* libxml2-kanna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libxml2-kanna.h"; sourceTree = "<group>"; };
+		043566D81FC4742000C0DE73 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		04ECBEF91FC41C61009DD961 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04ECBEFB1FC41C66009DD961 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +142,7 @@
 		0400B66B1FC421C900EDD251 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				043566C71FC466DC00C0DE73 /* libxml2.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +175,7 @@
 				0406F6C91FC41B6300F657F3 /* Assets.xcassets */,
 				04ECBEFB1FC41C66009DD961 /* LaunchScreen.storyboard */,
 				0406F6CE1FC41B6300F657F3 /* Info.plist */,
+				043566BE1FC4666D00C0DE73 /* DBMeinv-Bridging-Header.h */,
 			);
 			path = DBMeinv;
 			sourceTree = "<group>";
@@ -200,6 +216,7 @@
 		0406F6DA1FC41BD200F657F3 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				043566AE1FC464D800C0DE73 /* Kanna */,
 				0406F6DB1FC41BD200F657F3 /* Alamofire */,
 				0406F6FD1FC41BD200F657F3 /* ObjectMapper */,
 			);
@@ -272,6 +289,28 @@
 			path = Comm;
 			sourceTree = "<group>";
 		};
+		043566AE1FC464D800C0DE73 /* Kanna */ = {
+			isa = PBXGroup;
+			children = (
+				043566D61FC4742000C0DE73 /* Modules */,
+				043566C91FC468AD00C0DE73 /* CSS.swift */,
+				043566CE1FC468AD00C0DE73 /* Kanna.swift */,
+				043566CD1FC468AD00C0DE73 /* libxmlHTMLDocument.swift */,
+				043566CB1FC468AD00C0DE73 /* libxmlHTMLNode.swift */,
+				043566CA1FC468AD00C0DE73 /* libxmlParserOption.swift */,
+			);
+			path = Kanna;
+			sourceTree = "<group>";
+		};
+		043566D61FC4742000C0DE73 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				043566D71FC4742000C0DE73 /* libxml2-kanna.h */,
+				043566D81FC4742000C0DE73 /* module.modulemap */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +343,7 @@
 				TargetAttributes = {
 					0406F6BE1FC41B6200F657F3 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -351,6 +391,7 @@
 				0406F72A1FC41BD200F657F3 /* TaskDelegate.swift in Sources */,
 				0406F7451FC41BD200F657F3 /* Mapper.swift in Sources */,
 				0406F7291FC41BD200F657F3 /* SessionManager.swift in Sources */,
+				043566D11FC468AD00C0DE73 /* libxmlParserOption.swift in Sources */,
 				0406F73C1FC41BD200F657F3 /* EnumTransform.swift in Sources */,
 				0406F74D1FC41BD200F657F3 /* MNBaseController.swift in Sources */,
 				0406F73E1FC41BD200F657F3 /* HexColorTransform.swift in Sources */,
@@ -358,8 +399,10 @@
 				0406F7201FC41BD200F657F3 /* NetworkReachabilityManager.swift in Sources */,
 				0406F74C1FC41BD200F657F3 /* URLTransform.swift in Sources */,
 				0406F7441FC41BD200F657F3 /* Mappable.swift in Sources */,
+				043566D41FC468AD00C0DE73 /* Kanna.swift in Sources */,
 				0406F7401FC41BD200F657F3 /* IntegerOperators.swift in Sources */,
 				0406F7391FC41BD200F657F3 /* DateTransform.swift in Sources */,
+				043566D31FC468AD00C0DE73 /* libxmlHTMLDocument.swift in Sources */,
 				0406F71C1FC41BD200F657F3 /* DispatchQueue+Alamofire.swift in Sources */,
 				0406F73D1FC41BD200F657F3 /* FromJSON.swift in Sources */,
 				0406F7251FC41BD200F657F3 /* ResponseSerialization.swift in Sources */,
@@ -376,8 +419,10 @@
 				0406F7221FC41BD200F657F3 /* ParameterEncoding.swift in Sources */,
 				0406F7411FC41BD200F657F3 /* ISO8601DateTransform.swift in Sources */,
 				0406F73A1FC41BD200F657F3 /* DictionaryTransform.swift in Sources */,
+				043566D21FC468AD00C0DE73 /* libxmlHTMLNode.swift in Sources */,
 				0406F7381FC41BD200F657F3 /* DateFormatterTransform.swift in Sources */,
 				0406F72C1FC41BD200F657F3 /* Validation.swift in Sources */,
+				043566D01FC468AD00C0DE73 /* CSS.swift in Sources */,
 				0406F7461FC41BD200F657F3 /* NSDecimalNumberTransform.swift in Sources */,
 				0406F73F1FC41BD200F657F3 /* ImmutableMappable.swift in Sources */,
 				0406F74A1FC41BD200F657F3 /* TransformOperators.swift in Sources */,
@@ -507,15 +552,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RE55TZ3K4;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = DBMeinv/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lorwy.DBMeinv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/DBMeinv/Vender/Kanna/Modules";
+				SWIFT_OBJC_BRIDGING_HEADER = "DBMeinv/DBMeinv-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -525,15 +574,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RE55TZ3K4;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = DBMeinv/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lorwy.DBMeinv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/DBMeinv/Vender/Kanna/Modules";
+				SWIFT_OBJC_BRIDGING_HEADER = "DBMeinv/DBMeinv-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
