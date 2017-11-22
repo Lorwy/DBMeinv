@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - CHTCollectionViewWaterfallLayout (0.9.7):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
+  - Kanna (4.0.0)
+  - Kingfisher (4.3.1)
+  - ObjectMapper (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - CHTCollectionViewWaterfallLayout
+  - Kanna (from `https://github.com/tid-kijyun/Kanna.git`, branch `feature/v4.0.0`)
+  - Kingfisher
+  - ObjectMapper
+
+EXTERNAL SOURCES:
+  Kanna:
+    :branch: feature/v4.0.0
+    :git: https://github.com/tid-kijyun/Kanna.git
+
+CHECKOUT OPTIONS:
+  Kanna:
+    :commit: 58e3513d20cd16fe8b9ff16b5a2b481fcd643499
+    :git: https://github.com/tid-kijyun/Kanna.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+
+PODFILE CHECKSUM: 7421d1220e36ad9da2c3174e42fde2abfe464ac8
+
+COCOAPODS: 1.1.1
