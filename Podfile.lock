@@ -9,6 +9,7 @@ PODS:
   - Kanna (4.0.0)
   - Kingfisher (4.3.1)
   - ObjectMapper (3.1.0)
+  - PKHUD (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Kanna (from `https://github.com/tid-kijyun/Kanna.git`, branch `feature/v4.0.0`)
   - Kingfisher
   - ObjectMapper
+  - PKHUD (~> 5.0)
 
 EXTERNAL SOURCES:
   Kanna:
@@ -35,7 +37,8 @@ SPEC CHECKSUMS:
   Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
 
-PODFILE CHECKSUM: 7421d1220e36ad9da2c3174e42fde2abfe464ac8
+PODFILE CHECKSUM: f122884c1c699bb54dffdc57b040b999db6f1508
 
 COCOAPODS: 1.1.1

@@ -20,6 +20,9 @@ class MNPictureCategoryViewModel: NSObject {
     var populatingPhotos = false   // 是否在获取图片
     var currentPage = 1
     
+    var populateSuccess = false
+    
+    
     var currentType:PageType = .daxiong
     
     
@@ -49,6 +52,7 @@ class MNPictureCategoryViewModel: NSObject {
 
         // 标记正在获取，其他线程来则返回
         populatingPhotos = true
+        populateSuccess = false
         let pageUrl = getPageUrl()
         Alamofire.request(pageUrl).responseString { response in
             print("Success: \(response.result.isSuccess)")
@@ -56,6 +60,7 @@ class MNPictureCategoryViewModel: NSObject {
             let html = response.result.value
             
             if isSuccess == true {
+                self.populateSuccess = true
                 let queue = DispatchQueue(label:"com.lorwy.myqueue")
                 queue.async {
                     //用photos保存临时数据
@@ -80,8 +85,9 @@ class MNPictureCategoryViewModel: NSObject {
                     }
                     NotificationCenter.default.post(name: NSNotification.Name("populatePhotoshttp"), object: nil)
                 }
-            }else {
-
+            }else{
+                self.populateSuccess = false
+                NotificationCenter.default.post(name: NSNotification.Name("populatePhotoshttp"), object: nil)
             }
             self.populatingPhotos = false;
         }

@@ -9,6 +9,7 @@
 import UIKit
 import CHTCollectionViewWaterfallLayout
 import Kingfisher
+import PKHUD
 
 
 /// 图片分类页面
@@ -26,6 +27,7 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionview), name: NSNotification.Name("populatePhotoshttp"), object: nil)
         self.setupCollectionView()
+        HUD.show(.progress)
         pictureViewModel.populatePhotos()
     }
     
@@ -35,7 +37,12 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
 //            NSIndexPath(item: $0, section: 0)
 //        })
         DispatchQueue.main.async(execute: {
-             self.pictureCollectionView.reloadData()
+            if self.pictureViewModel.populateSuccess {
+                HUD.flash(.success, delay: 1.0)
+                self.pictureCollectionView.reloadData()
+            } else {
+                HUD.flash(.error, delay: 1.0)
+            }
         })
        
     }
@@ -89,7 +96,7 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         if !model.imageSize.equalTo(CGSize.zero) {
             return model.imageSize
         }
-        return CGSize.init(width: 150, height: 150)
+        return CGSize(width: 150, height: 150)
     }
     
     /*
