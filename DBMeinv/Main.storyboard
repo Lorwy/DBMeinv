@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pS4-bl-zdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0g-tU-K6n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +19,107 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWn-C3-UV3">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csS-W5-JZr" userLabel="lineView">
+                                        <rect key="frame" x="0.0" y="37" width="62.5" height="3"/>
+                                        <color key="backgroundColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="srB-YK-cL0"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-UX-qWO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-kL-2sf">
+                                                <rect key="frame" x="0.0" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="大胸">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3s-9X-fFF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhg-g8-TCu">
+                                                <rect key="frame" x="62.5" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="翘臀">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYG-N1-L4V"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx3-cZ-YkE">
+                                                <rect key="frame" x="125" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="黑丝">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBL-b2-whC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gu-RJ-PdH">
+                                                <rect key="frame" x="187.5" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="美腿">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dzk-fW-Tpf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-bO-gGX">
+                                                <rect key="frame" x="250" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="颜值">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ot-BF-T4T"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCz-aZ-PR9">
+                                                <rect key="frame" x="312.5" y="5" width="62.5" height="30"/>
+                                                <state key="normal" title="大杂烩">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.31085968019999999" green="0.78501093389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="titelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOF-q2-tcW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DWn-C3-UV3" secondAttribute="height" multiplier="15:2" id="aRQ-P9-xyo"/>
+                                    <constraint firstItem="dtf-UX-qWO" firstAttribute="leading" secondItem="DWn-C3-UV3" secondAttribute="leading" id="AIX-v1-8GH"/>
+                                    <constraint firstItem="csS-W5-JZr" firstAttribute="centerX" secondItem="yRx-kL-2sf" secondAttribute="centerX" id="H1t-CK-GMd"/>
+                                    <constraint firstItem="dtf-UX-qWO" firstAttribute="top" secondItem="DWn-C3-UV3" secondAttribute="top" id="PEI-HY-QdI"/>
+                                    <constraint firstAttribute="bottom" secondItem="csS-W5-JZr" secondAttribute="bottom" id="hjW-Q2-0cq"/>
+                                    <constraint firstAttribute="trailing" secondItem="dtf-UX-qWO" secondAttribute="trailing" id="iMH-8a-3OH"/>
+                                    <constraint firstAttribute="height" constant="40" id="jst-UW-um3"/>
+                                    <constraint firstItem="csS-W5-JZr" firstAttribute="width" secondItem="yRx-kL-2sf" secondAttribute="width" id="vVc-3A-pyM"/>
+                                    <constraint firstAttribute="bottom" secondItem="dtf-UX-qWO" secondAttribute="bottom" id="zii-zO-Zgg"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eX9-to-8jD">
-                                <rect key="frame" x="0.0" y="114" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="UZ3-kA-nRy" customClass="CHTCollectionViewWaterfallLayout"/>
                                 <cells>
@@ -97,30 +189,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="美  图" id="8PP-3S-Wmg"/>
                     <connections>
+                        <outlet property="lineView" destination="csS-W5-JZr" id="5Te-dy-vj0"/>
                         <outlet property="pictureCollectionView" destination="eX9-to-8jD" id="bRF-gn-6CC"/>
+                        <outlet property="stackView" destination="dtf-UX-qWO" id="Iwz-4H-deS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.8" y="77.811094452773617"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="QdD-Ub-ERf">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pS4-bl-zdg" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DQ3-JA-KjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Q0g-tU-K6n" kind="relationship" relationship="viewControllers" id="XyI-e2-2C9"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xML-fb-EpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-926" y="78"/>
         </scene>
         <!--美图-->
         <scene sceneID="5Ez-wL-aCa">

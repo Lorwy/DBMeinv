@@ -15,6 +15,10 @@ import PKHUD
 /// 图片分类页面
 class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout ,CHTCollectionViewDelegateWaterfallLayout{
     
+    var didSelectType = false
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     var pictureViewModel = MNPictureCategoryViewModel()
     
@@ -32,13 +36,12 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
     }
     
     @objc func reloadCollectionview() -> Void {
-//        let lastItem = pictureViewModel.photos.count
-//        let indexpaths = (lastItem..<pictureViewModel.photos.count).map({
-//            NSIndexPath(item: $0, section: 0)
-//        })
+        if didSelectType {
+            self.pictureCollectionView.contentOffset = CGPoint(x:0, y:0)
+        }
         DispatchQueue.main.async(execute: {
             if self.pictureViewModel.populateSuccess {
-                HUD.flash(.success, delay: 1.0)
+                HUD.hide(animated: true)
                 self.pictureCollectionView.reloadData()
             } else {
                 HUD.flash(.error, delay: 1.0)
@@ -51,6 +54,7 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         let layout = pictureCollectionView.collectionViewLayout as! CHTCollectionViewWaterfallLayout
         layout.columnCount = 3;
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        self.pictureCollectionView.scrollsToTop = true
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,7 +71,6 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
                                           placeholder: nil,
                                           options: [.transition(ImageTransition.fade(1))],
                                           progressBlock: { receivedSize, totalSize in
-            print("\(indexPath.row + 1): \(receivedSize)/\(totalSize)")
         },
                                           completionHandler: { image, error, cacheType, imageURL in
                                             if image != nil {
@@ -98,6 +101,21 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         }
         return CGSize(width: 150, height: 150)
     }
+    
+    @IBAction func titelButtonClicked(_ sender: UIButton) {
+        didSelectType = true
+        for button : UIView in self.stackView.subviews {
+            (button as! UIButton).titleLabel?.textColor = UIColor.black
+        }
+        sender.titleLabel?.textColor = UIColor(red:0.34, green:0.79, blue:0.99, alpha:1.00)
+        UIView.animate(withDuration: 0.5) {
+            self.lineView.center = CGPoint.init(x: sender.center.x, y: self.lineView.center.y)
+        }
+        HUD.show(.progress)
+        self.pictureViewModel.selectIndexDidChanged(index: sender.tag)
+    }
+    
+    
     
     /*
     // MARK: - Navigation

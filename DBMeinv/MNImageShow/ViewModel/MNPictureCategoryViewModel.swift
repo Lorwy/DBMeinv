@@ -36,8 +36,6 @@ class MNPictureCategoryViewModel: NSObject {
     // MARK: - 当前选中类型发生变化
     func selectIndexDidChanged(index: Int) {
         currentType = MNPictureUtil.selectTypeByNumber(number: index)
-        
-        photos.removeAllObjects()
         //设置为第一页，刷新数据
         self.currentPage = 1
         populatePhotos()
