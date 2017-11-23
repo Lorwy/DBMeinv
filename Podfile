@@ -11,6 +11,7 @@ pod 'Kingfisher'
 pod 'CHTCollectionViewWaterfallLayout'
 pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feature/v4.0.0'
 pod 'PKHUD', '~> 5.0'
+pod ‘MJRefresh’
 
 end
 

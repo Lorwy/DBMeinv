@@ -19,6 +19,8 @@ class MNPictureCategoryViewModel: NSObject {
     
     var populatingPhotos = false   // 是否在获取图片
     var currentPage = 1
+    var isloadMore = false
+    
     
     var populateSuccess = false
     
@@ -35,19 +37,22 @@ class MNPictureCategoryViewModel: NSObject {
 
     // MARK: - 当前选中类型发生变化
     func selectIndexDidChanged(index: Int) {
-        currentType = MNPictureUtil.selectTypeByNumber(number: index)
-        //设置为第一页，刷新数据
-        self.currentPage = 1
-        populatePhotos()
+        currentType = MNPictureUtil.selectTypeByNumber(number: index - 1)
+        populatePhotos(loadMore: false)
     }
     
     //MARK - 网络获取信息
-    func populatePhotos() {
+    func populatePhotos(loadMore: Bool) {
         if populatingPhotos { //正在获取，则返回
             print("getting now return back")
             return
         }
-
+        self.isloadMore = loadMore
+        if loadMore {
+            self.currentPage += 1
+        } else {
+            self.currentPage = 1
+        }
         // 标记正在获取，其他线程来则返回
         populatingPhotos = true
         populateSuccess = false
@@ -76,8 +81,9 @@ class MNPictureCategoryViewModel: NSObject {
                                 datas.add(itemInfo)
                             }
                         }
-                        if datas.count > 0 {
-                            self.currentPage += 1
+                        if self.isloadMore { // 加载更多
+                            self.photos.addObjects(from: datas.array)
+                        } else {
                             self.photos = datas
                         }
                     }

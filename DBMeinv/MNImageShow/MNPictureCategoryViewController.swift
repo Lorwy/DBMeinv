@@ -10,6 +10,7 @@ import UIKit
 import CHTCollectionViewWaterfallLayout
 import Kingfisher
 import PKHUD
+import MJRefresh
 
 
 /// 图片分类页面
@@ -31,8 +32,8 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionview), name: NSNotification.Name("populatePhotoshttp"), object: nil)
         self.setupCollectionView()
-        HUD.show(.progress)
-        pictureViewModel.populatePhotos()
+        self.configureRefresh()
+        self .getPictureData(isloadMore: false)
     }
     
     @objc func reloadCollectionview() -> Void {
@@ -40,6 +41,7 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
             self.pictureCollectionView.contentOffset = CGPoint(x:0, y:0)
         }
         DispatchQueue.main.async(execute: {
+            self.endRefresh()
             if self.pictureViewModel.populateSuccess {
                 HUD.hide(animated: true)
                 self.pictureCollectionView.reloadData()
@@ -50,6 +52,17 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
        
     }
     
+    // MARK: Refresh
+    
+    func endRefresh() -> Void {
+        if self.pictureCollectionView.mj_header != nil{
+            self.pictureCollectionView?.mj_header.endRefreshing()
+        }
+        if self.pictureCollectionView.mj_footer != nil{
+            self.pictureCollectionView?.mj_footer.endRefreshing()
+        }
+    }
+    
     func setupCollectionView() {
         let layout = pictureCollectionView.collectionViewLayout as! CHTCollectionViewWaterfallLayout
         layout.columnCount = 3;
@@ -57,6 +70,23 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         self.pictureCollectionView.scrollsToTop = true
     }
     
+    func configureRefresh() {
+        self.pictureCollectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+            print("header")
+            self.getPictureData(isloadMore: false)
+        })
+        self.pictureCollectionView?.mj_footer = MJRefreshAutoFooter(refreshingBlock: { () -> Void in
+            print("footer")
+            self.getPictureData(isloadMore: true)
+        })
+    }
+    
+    func getPictureData(isloadMore: Bool) -> Void {
+        HUD.show(.progress)
+        pictureViewModel.populatePhotos(loadMore: isloadMore)
+    }
+    
+    //MARK: - UICollectionViewDataSource
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictureViewModel.photos.count
     }
@@ -102,12 +132,15 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         return CGSize(width: 150, height: 150)
     }
     
+    // MARK: - Action
     @IBAction func titelButtonClicked(_ sender: UIButton) {
         didSelectType = true
         for button : UIView in self.stackView.subviews {
-            (button as! UIButton).titleLabel?.textColor = UIColor.black
+            if button is UIButton {
+                (button as! UIButton).setTitleColor(UIColor.black, for: .normal)
+            }
         }
-        sender.titleLabel?.textColor = UIColor(red:0.34, green:0.79, blue:0.99, alpha:1.00)
+        sender.setTitleColor(UIColor(red:0.34, green:0.79, blue:0.99, alpha:1.00), for: .normal)
         UIView.animate(withDuration: 0.5) {
             self.lineView.center = CGPoint.init(x: sender.center.x, y: self.lineView.center.y)
         }

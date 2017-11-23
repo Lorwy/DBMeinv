@@ -8,6 +8,7 @@ PODS:
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
   - Kanna (4.0.0)
   - Kingfisher (4.3.1)
+  - MJRefresh (3.1.15.1)
   - ObjectMapper (3.1.0)
   - PKHUD (5.0.0)
 
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - Kanna (from `https://github.com/tid-kijyun/Kanna.git`, branch `feature/v4.0.0`)
   - Kingfisher
+  - MJRefresh
   - ObjectMapper
   - PKHUD (~> 5.0)
 
@@ -36,9 +38,10 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
 
-PODFILE CHECKSUM: f122884c1c699bb54dffdc57b040b999db6f1508
+PODFILE CHECKSUM: 308ff6da0ff5ef9b19add0099322ac6d14675e1a
 
 COCOAPODS: 1.1.1
