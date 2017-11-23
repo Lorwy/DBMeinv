@@ -11,6 +11,7 @@ import CHTCollectionViewWaterfallLayout
 import Kingfisher
 import PKHUD
 import MJRefresh
+import SKPhotoBrowser
 
 
 /// 图片分类页面
@@ -116,6 +117,25 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    // 点击查看大图
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // 1. create SKPhoto Array from UIImage
+        var images = [SKPhoto]()
+        for model in self.pictureViewModel.photos {
+            if model is PhotoInfo {
+                let photo = SKPhoto.photoWithImageURL((model as! PhotoInfo).bigImageUrl)// add some UIImage
+                photo.caption = (model as! PhotoInfo).title
+                images.append(photo)
+            }
+        }
+        SKPhotoBrowserOptions.displayToolbar = true               // all tool bar will be hidden
+        SKPhotoBrowserOptions.displayCounterLabel = true
+        // 2. create PhotoBrowser Instance, and present from your viewController.
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(indexPath.row)
+        self.present(browser, animated: true, completion: nil)
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout

@@ -11,6 +11,7 @@ PODS:
   - MJRefresh (3.1.15.1)
   - ObjectMapper (3.1.0)
   - PKHUD (5.0.0)
+  - SKPhotoBrowser (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - MJRefresh
   - ObjectMapper
   - PKHUD (~> 5.0)
+  - SKPhotoBrowser
 
 EXTERNAL SOURCES:
   Kanna:
@@ -41,7 +43,8 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
 
-PODFILE CHECKSUM: 308ff6da0ff5ef9b19add0099322ac6d14675e1a
+PODFILE CHECKSUM: ab0c96d1ac8952110094176eb4200f167256833d
 
 COCOAPODS: 1.1.1
