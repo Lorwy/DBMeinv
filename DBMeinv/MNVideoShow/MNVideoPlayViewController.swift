@@ -14,6 +14,7 @@ class MNVideoPlayViewController: MNBaseController {
     
     var player = BMPlayer()
     var videoUrl = ""
+    var videoTitle = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class MNVideoPlayViewController: MNBaseController {
         super.viewDidAppear(animated)
         self.setupPlayer()
         let asset = BMPlayerResource(url: URL(string: videoUrl)!,
-                                     name: "风格互换：原来你我相爱")
+                                     name: videoTitle)
         self.player.setVideo(resource: asset)
     }
 

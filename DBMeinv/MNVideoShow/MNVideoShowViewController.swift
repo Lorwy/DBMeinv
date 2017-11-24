@@ -9,12 +9,15 @@
 import UIKit
 import Kingfisher
 import PKHUD
+import MJRefresh
 
 
 class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var vedioCollectionView: UICollectionView!
     var viewModel = MNVideoShowViewModel()
+    var palyingVideo = MNVideo()
+    
     
     
     
@@ -24,13 +27,36 @@ class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UIC
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionview), name: NSNotification.Name("populateVideoshttp"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(playVideo(notifier:)), name: NSNotification.Name("populateVideosPlayUrlHttp"), object: nil)
+        
+        self.setupCollectionView()
+        self.configureRefresh()
+        self.getVideoData(isloadMore: false)
+        
+    }
+    
+    func setupCollectionView() {
+        self.vedioCollectionView.scrollsToTop = true
+    }
+    
+    func configureRefresh() {
+        self.vedioCollectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+            print("header")
+            self.getVideoData(isloadMore: false)
+        })
+        self.vedioCollectionView?.mj_footer = MJRefreshAutoFooter(refreshingBlock: { () -> Void in
+            print("footer")
+            self.getVideoData(isloadMore: true)
+        })
+    }
+    
+    func getVideoData(isloadMore: Bool) -> Void {
         HUD.show(.progress)
-        viewModel.populateVieos(loadMore: false)
+        viewModel.populateVieos(loadMore: isloadMore)
     }
     
     @objc func reloadCollectionview() -> Void {
         DispatchQueue.main.async(execute: {
-//            self.endRefresh()
+            self.endRefresh()
             if self.viewModel.populateSuccess {
                 HUD.hide(animated: true)
                 self.vedioCollectionView.reloadData()
@@ -47,13 +73,29 @@ class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UIC
                 HUD.hide(animated: true)
                 // 播放视频
                 print(notifier.object ?? "")
-                let playVC = MNVideoPlayViewController()
-                playVC.videoUrl = notifier.object as! String
-                self.present(playVC, animated: true, completion: nil)
+                if (notifier.object as! NSString).length > 0 {
+                    let playVC = MNVideoPlayViewController()
+                    playVC.videoUrl = notifier.object as! String
+                    playVC.videoTitle = self.palyingVideo.title
+                    self.present(playVC, animated: true, completion: nil)
+                } else {
+                    HUD.flash(.error, delay: 1.0)
+                }
             } else {
                 HUD.flash(.error, delay: 1.0)
             }
         })
+    }
+    
+    // MARK: Refresh
+    
+    func endRefresh() -> Void {
+        if self.vedioCollectionView.mj_header != nil{
+            self.vedioCollectionView?.mj_header.endRefreshing()
+        }
+        if self.vedioCollectionView.mj_footer != nil{
+            self.vedioCollectionView?.mj_footer.endRefreshing()
+        }
     }
     
     //MARK: - UICollectionViewDataSource
@@ -78,6 +120,7 @@ class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model: MNVideo = viewModel.videos.object(at: indexPath.row) as! MNVideo;
+        palyingVideo = model;
         HUD.show(.progress)
         viewModel.populateVieosUrl(targetUrl: model.videoUrl)
     }
@@ -86,6 +129,10 @@ class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(10, 10, 10, 10)
     }
     
     /*

@@ -11,6 +11,5 @@ import UIKit
 class MNVideoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var userPhotoImageView: UIImageView!
     @IBOutlet weak var bigImageView: UIImageView!
 }
