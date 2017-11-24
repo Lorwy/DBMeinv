@@ -34,7 +34,7 @@ class MNPictureCategoryViewController: MNBaseController, UICollectionViewDataSou
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionview), name: NSNotification.Name("populatePhotoshttp"), object: nil)
         self.setupCollectionView()
         self.configureRefresh()
-        self .getPictureData(isloadMore: false)
+        self.getPictureData(isloadMore: false)
     }
     
     @objc func reloadCollectionview() -> Void {

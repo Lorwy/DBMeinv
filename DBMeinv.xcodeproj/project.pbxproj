@@ -12,6 +12,12 @@
 		0406F7181FC41BD200F657F3 /* MNPictureCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F6D51FC41BD200F657F3 /* MNPictureCategoryViewController.swift */; };
 		0406F7191FC41BD200F657F3 /* MNPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F6D81FC41BD200F657F3 /* MNPictureCollectionViewCell.swift */; };
 		0406F74D1FC41BD200F657F3 /* MNBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0406F7171FC41BD200F657F3 /* MNBaseController.swift */; };
+		042700011FC7BCA100985940 /* MNVideoShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042700001FC7BCA100985940 /* MNVideoShowViewModel.swift */; };
+		042700031FC7BF1C00985940 /* MNVideoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042700021FC7BF1C00985940 /* MNVideoCollectionViewLayout.swift */; };
+		0427FFFB1FC7BC3800985940 /* MNVideoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FFFA1FC7BC3800985940 /* MNVideoShowViewController.swift */; };
+		0427FFFD1FC7BC5800985940 /* MNVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FFFC1FC7BC5800985940 /* MNVideo.swift */; };
+		0427FFFF1FC7BC7C00985940 /* MNVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FFFE1FC7BC7C00985940 /* MNVideoCollectionViewCell.swift */; };
+		042B50AB1FC7F04D0005B069 /* MNStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B50AA1FC7F04D0005B069 /* MNStringExtension.swift */; };
 		04ECBEFA1FC41C61009DD961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECBEF91FC41C61009DD961 /* Main.storyboard */; };
 		04ECBEFC1FC41C66009DD961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ECBEFB1FC41C66009DD961 /* LaunchScreen.storyboard */; };
 		04F92BD81FC50D38002A2D91 /* MNPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F92BD71FC50D38002A2D91 /* MNPicture.swift */; };
@@ -27,6 +33,12 @@
 		0406F6D51FC41BD200F657F3 /* MNPictureCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNPictureCategoryViewController.swift; sourceTree = "<group>"; };
 		0406F6D81FC41BD200F657F3 /* MNPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		0406F7171FC41BD200F657F3 /* MNBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNBaseController.swift; sourceTree = "<group>"; };
+		042700001FC7BCA100985940 /* MNVideoShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNVideoShowViewModel.swift; sourceTree = "<group>"; };
+		042700021FC7BF1C00985940 /* MNVideoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNVideoCollectionViewLayout.swift; sourceTree = "<group>"; };
+		0427FFFA1FC7BC3800985940 /* MNVideoShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNVideoShowViewController.swift; sourceTree = "<group>"; };
+		0427FFFC1FC7BC5800985940 /* MNVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNVideo.swift; sourceTree = "<group>"; };
+		0427FFFE1FC7BC7C00985940 /* MNVideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		042B50AA1FC7F04D0005B069 /* MNStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNStringExtension.swift; sourceTree = "<group>"; };
 		043566BE1FC4666D00C0DE73 /* DBMeinv-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DBMeinv-Bridging-Header.h"; sourceTree = "<group>"; };
 		043566C71FC466DC00C0DE73 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		04ECBEF91FC41C61009DD961 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0406F7161FC41BD200F657F3 /* Comm */,
+				0427FFF61FC7BBD200985940 /* MNVideoShow */,
 				0406F6D41FC41BD200F657F3 /* MNImageShow */,
 				0406F6DA1FC41BD200F657F3 /* Vender */,
 				0406F6C21FC41B6200F657F3 /* AppDelegate.swift */,
@@ -148,8 +161,45 @@
 			isa = PBXGroup;
 			children = (
 				0406F7171FC41BD200F657F3 /* MNBaseController.swift */,
+				042B50AA1FC7F04D0005B069 /* MNStringExtension.swift */,
 			);
 			path = Comm;
+			sourceTree = "<group>";
+		};
+		0427FFF61FC7BBD200985940 /* MNVideoShow */ = {
+			isa = PBXGroup;
+			children = (
+				0427FFF91FC7BBFD00985940 /* Model */,
+				0427FFF71FC7BBFD00985940 /* View */,
+				0427FFF81FC7BBFD00985940 /* ViewModel */,
+				0427FFFA1FC7BC3800985940 /* MNVideoShowViewController.swift */,
+			);
+			path = MNVideoShow;
+			sourceTree = "<group>";
+		};
+		0427FFF71FC7BBFD00985940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0427FFFE1FC7BC7C00985940 /* MNVideoCollectionViewCell.swift */,
+				042700021FC7BF1C00985940 /* MNVideoCollectionViewLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0427FFF81FC7BBFD00985940 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				042700001FC7BCA100985940 /* MNVideoShowViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0427FFF91FC7BBFD00985940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0427FFFC1FC7BC5800985940 /* MNVideo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +328,16 @@
 			files = (
 				0406F74D1FC41BD200F657F3 /* MNBaseController.swift in Sources */,
 				04F92BDA1FC50E13002A2D91 /* MNPictureCategoryViewModel.swift in Sources */,
+				042700031FC7BF1C00985940 /* MNVideoCollectionViewLayout.swift in Sources */,
+				0427FFFD1FC7BC5800985940 /* MNVideo.swift in Sources */,
 				04F92BD81FC50D38002A2D91 /* MNPicture.swift in Sources */,
+				042B50AB1FC7F04D0005B069 /* MNStringExtension.swift in Sources */,
 				0406F6C31FC41B6200F657F3 /* AppDelegate.swift in Sources */,
+				0427FFFF1FC7BC7C00985940 /* MNVideoCollectionViewCell.swift in Sources */,
+				042700011FC7BCA100985940 /* MNVideoShowViewModel.swift in Sources */,
 				0406F7191FC41BD200F657F3 /* MNPictureCollectionViewCell.swift in Sources */,
 				0406F7181FC41BD200F657F3 /* MNPictureCategoryViewController.swift in Sources */,
+				0427FFFB1FC7BC3800985940 /* MNVideoShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
