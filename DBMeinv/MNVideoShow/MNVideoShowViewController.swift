@@ -10,10 +10,12 @@ import UIKit
 import Kingfisher
 import PKHUD
 
+
 class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var vedioCollectionView: UICollectionView!
     var viewModel = MNVideoShowViewModel()
+    
     
     
     override func viewDidLoad() {
@@ -45,6 +47,9 @@ class MNVideoShowViewController: MNBaseController,UICollectionViewDataSource,UIC
                 HUD.hide(animated: true)
                 // 播放视频
                 print(notifier.object ?? "")
+                let playVC = MNVideoPlayViewController()
+                playVC.videoUrl = notifier.object as! String
+                self.present(playVC, animated: true, completion: nil)
             } else {
                 HUD.flash(.error, delay: 1.0)
             }

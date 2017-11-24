@@ -13,6 +13,8 @@ pod 'Kanna', :git => 'https://github.com/tid-kijyun/Kanna.git', :branch => 'feat
 pod 'PKHUD', '~> 5.0'
 pod ‘MJRefresh’
 pod 'SKPhotoBrowser'
+pod 'BMPlayer', '~> 1.0.0'
+pod 'SnapKit'
 
 end
 
